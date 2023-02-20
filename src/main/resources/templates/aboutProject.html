@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Project</title>
+<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous"/>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .container::after,
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body style=" background-image: none; background-color:rgb(232, 232, 232);">
+  <!-- Heading & Logo of Page -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img src="images/inventory_logo.png" alt="Inventory Logo" width="75">
+          <h1 class="animate-charcter">Inventory Management System</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- The navigation menu -->
+  <div class="navbar">
+    <a href="" th:href="@{/index}">Home </a>
+
+    <div class="subnav">
+      <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="" th:href="@{/purchase_item}">Buy Products</a>
+        <a href="" th:href="@{/order_sell}">Sell Products</a>
+        <a href="" th:href="@{/items}">Add New Products</a>
+      </div>
+    </div>
+    <div class="subnav">
+      <button class="subnavbtn">Material <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="" th:href="@{/steel}">Steel</a>
+        <a href="" th:href="@{/concrete}">Concrete</a>
+        <a href="" th:href="@{/bricksandblocks}">Bricks & Blocks</a>
+        <a href="" th:href="@{/floortiles}">Floor Tile</a>
+        <a href="" th:href="@{/cable}">Cable</a>
+        <a href="" th:href="@{/pipes}">Pipes</a>
+      </div>
+    </div>
+    <a href="" th:href="@{/contact}">Contact us </a>
+    <div class="subnav">
+      <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="" th:href="@{/aboutProject}">Project</a>
+        <a href="" th:href="@{/aboutus}">Team</a>
+      </div>
+    </div>
+    <a th:href="@{/logout}" class="btn btn-link btn-sm mb-2">Logout</a>
+  </div>
+  
+  <br>
+   
+  <h2 style="text-align:center;  font-size: 40px;">Inventory Management System</h2>
+  <div>
+    <img src="images/inventory-management-system-features.jpg" alt="Inventory Management System" style="margin-left: 45px;">
+      <br>
+  </div>
+  <div style="margin-left: 45px; margin-right: 45px;">
+    <div>
+    <h1>What Is an Inventory Management System?</h1>
+    <p style="font-size: 18px;">An inventory management system helps organizations account for all incoming and outgoing
+      stock to better meet customer demand and avoid the expense of overstock or loss of business with stock outs. The
+      system impacts every essential business function including accounting, production, warehouse management,
+      purchasing, sales and customer service.</p>
+    </div>
+    <hr>
+      <h3>Each company will manage stock in their own unique way, depending on the nature and size of their business. Let's take a look at a simple example.</h3>
+    
+      <h1>Inventory management system example</h1>
+      <p style="font-size: 18px;">Carlos starts a business selling food hampers. He has various suppliers who sell him food in bulk, some of which must then be split up and repackaged.</p>
+      <p style="font-size: 18px;">Carlos creates an Excel spreadsheet, which he updates whenever he orders more stock, assembles a hamper or completes a sale. This is his inventory management system, and he's entirely dependent on it to know how much stock he currently has, when his food products might expire, how many hampers he can sell and more.</p>
+      <hr>
+      <h1>Why you need an inventory system</h1>
+      <p style="font-size: 18px;">Any venture that handles stock will need a system to accurately track and control it. Without one, you'll be working on an entirely ad-hoc basis — and you'll quickly run into situations where your business is overstocked or understocked.</p>
+      <p style="font-size: 18px;">Inventory systems tell you the number of components or ingredients you need to create or assemble your final product. Without this information you may end up with excess stock, eroding your bottom line, or with insufficient stock to meet customer demand.</p>
+      <p style="font-size: 18px;">But while you will need an inventory management system, which one you choose is entirely up to you. There are countless different systems you can adopt, ranging from simple approaches to comprehensive solutions.</p><hr>
+      <h1>When to upgrade your inventory management</h1>
+      <h4>Moving onto a dedicated inventory solution can provide massive benefits to your business, but it is a step change. Here are some signs that it might be time to upgrade.</h4>
+      <h2>You need more flexibility</h2>
+      <p style="font-size: 18px;">Spreadsheets are an inflexible way to manage inventory. If you find that you need to add extra sheets to your solution, or are struggling because employees can't access real-time data, then it might be time to upgrade to cloud-based inventory software.</p>
+      <h2>You need more accuracy</h2>
+      <p style="font-size: 18px;">Do you find it difficult to track how much of a particular item you have at any one time? Using a dedicated solution, you - and your employees - will be able to get up-to-date information on your inventory at any time, from any place.</p>
+      <h2>Inventory costs are growing</h2>
+      <p style="font-size: 18px;">Holding costs can severely undermine your bottom line when they are not kept under control. The key to minimising holding costs is only to store as much stock as you need. An efficient inventory management system helps you keep your storage efficient.</p>
+      <h2>Slowing growth</h2>
+      <p style="font-size: 18px;">Maybe your salespeople have to contact your stockroom to get find out what they have to sell, or you find yourself spending too much time manually writing reports rather than focusing on your customers. Slowing sales can be a symptom of poorly managed stock - dedicated software can help you quickly return to growth.</p>
+
+  </div>
+</body>
+
+</html>

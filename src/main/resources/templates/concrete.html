@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concrete Info</title>
+<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous"/>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: none
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: rgba(0, 0, 0, 0.521);
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(47, 47, 47, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/5 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+  </style>
+</head>
+
+<body style=" background-image: none; background-color:rgb(232, 232, 232);">
+  <!-- Heading & Logo of Page -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img src="images/inventory_logo.png" alt="Inventory Logo" width="75">
+          <h1 class="animate-charcter">Inventory Management System</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- The navigation menu -->
+  <div class="navbar">
+    <a href="" th:href="@{/index}">Home </a>
+
+    <div class="subnav">
+      <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+         <a href="" th:href="@{/purchase_item}">Buy Products</a>
+        <a href="" th:href="@{/order_sell}">Sell Products</a>
+        <a href="" th:href="@{/items}">Add New Products</a>
+      </div>
+    </div>
+    <div class="subnav">
+      <button class="subnavbtn">Material <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="" th:href="@{/steel}">Steel</a>
+        <a href="" th:href="@{/concrete}">Concrete</a>
+        <a href="" th:href="@{/bricksandblocks}">Bricks & Blocks</a>
+        <a href="" th:href="@{/floortiles}">Floor Tile</a>
+        <a href="" th:href="@{/cable}">Cable</a>
+        <a href="" th:href="@{/pipes}">Pipes</a>
+      </div>
+    </div>
+    <a href="" th:href="@{/contact}">Contact us </a>
+    <div class="subnav">
+      <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="" th:href="@{/aboutProject}">Project</a>
+        <a href="" th:href="@{/aboutus}">Team</a>
+      </div>
+    </div>
+    <a th:href="@{/logout}" class="btn btn-link btn-sm mb-2">Logout</a>
+  </div>
+  
+  <br>
+   
+  <h2 style="text-align:center; font-size: 40px;">Concrete Products</h2>
+  <div>
+    <div style="margin-left: 45px; margin-right: 45px;">
+      <h1>What Is Concrete?</h1>
+      <p>Concrete is a construction material obtained by mixing cement, fine aggregate (sand) coarse aggregates (gravel, stone chips, rock, etc), and water in certain proportions.</p>
+      <p>All these ingredients when properly mixed, cement, and water start a reaction to bind themselves producing a plastic mass that hardens over time. This plastic and hardened mass is known as concrete.</p>
+      <p>The properties of concrete depend upon the quantity and proportions of the ingredients used in the mix. However, the properties can also be majorly modified based on the various type of cement used for the mix.</p>
+      <p>Concrete is very strong in compression but little in tension. Fresh concrete can be poured into any suitable forms or moulds to get desired shape and size. Concrete is widely used in all types of construction work like building, bridges, dams, roads, flyovers, etc.</p>
+    </div>
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+        <img src="images/concrete/ultratech.jpg" style="width:60%; margin-left: 20%;">
+        <div class="text" style="background-color:rgb(120, 119, 119); width: 600px; margin-left: 20%;">UltraTech Cement - is the largest manufacturer of grey cement, Ready Mix Concrete (RMC) and white cement in India. It is also one of the leading cement producers globally. Ultratech is the Largest among the top 5 cement companies in India . Ultra tech is the subsidiary of Grasim Industries which is owned by Aditya Birla Group.</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <img src="images/concrete/ambuja.png" style="width:60%; margin-left: 20%;">
+        <div class="text" style="background-color:rgb(120, 119, 119); width: 600px; margin-left: 20%;">Ambuja Cement - A part of the global conglomerate LafargeHolcim, is among the Top 10 Cement Companies in India. It is the second-largest producer of cement in India based on turnover.</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <img src="images/concrete/acc.png" style="width:60%; margin-left: 20%;">
+        <div class="text" style="background-color:rgb(120, 119, 119); width: 600px; margin-left: 20%;">ACC Cement - One of India’s leading manufacturers of cement and ready-mix concrete with 17 cement factories, 75 ready mix concrete plants, over 6,700 employees, a vast distribution network of 50,000+ dealers & retailers and a countrywide spread of sales offices. It is the 3rd leading cement companies in India</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <img src="images/concrete/birla.png" style="width:60%; margin-left: 20%;">
+        <div class="text" style="background-color:rgb(120, 119, 119); width: 600px; margin-left: 20%;">Birla Cement - It is the flagship Company of the M.P. Birla Group. Incorporated as Birla Jute Manufacturing Company Limited in 1919, it was Late Mr. Madhav Prasad Birla, who gave shape to it. As Chairman of the Company, he transformed it from a manufacturer of jute goods into a leading multi-product corporation with widespread activities. It is one of the Top leading cement companies in India</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <img src="images/concrete/shree.jpg" style="width:60%; margin-left: 20%;">
+        <div class="text" style="background-color:rgb(120, 119, 119); width: 600px; margin-left: 20%;">Shree Cement - Fourth among the Top 10 Companies in Cement in terms of sales. Incorporated in 1979 by renowned Bangur family based out of Kolkata. Set-up the first Cement Plant in 1985 with an installed capacity of 0.6 Mtpa. Today Total Cement Capacity of the Company is 29.30 Million tons.</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+	</div>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+
+</body>
+
+</html>

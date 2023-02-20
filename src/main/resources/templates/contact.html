@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact us</title>
+<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous" />
+<style>
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+	background-color: transparent;
+	width: 250px;
+	height: 275px;
+	border: 1px solid #f1f1f1;
+	perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden; /* Safari */
+	backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+	background-color: #bbb;
+	color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+	background-color: rgb(211, 211, 211);
+	color: rgb(0, 0, 0);
+	transform: rotateY(180deg);
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: content-box;
+}
+
+.column {
+	float: left;
+	width: 20.5%;
+	margin-bottom: 0px;
+	margin-left: 130px;
+	margin-right: 0px;
+}
+
+.card {
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+	margin: 35px 70px;
+}
+
+.container {
+	padding: 0 0px;
+}
+
+.container::after, .row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.title {
+	color: grey;
+}
+
+.button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 6px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 80%;
+}
+
+.button:hover {
+	background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+	.column {
+		width: 100%;
+		display: block;
+	}
+}
+</style>
+</head>
+
+<body
+	style="background-image: none; background-color: rgb(232, 232, 232);">
+	<!-- Heading & Logo of Page -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<img src="images/inventory_logo.png" alt="Inventory Logo"
+						width="75">
+					<h1 class="animate-charcter">Inventory Management System</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- The navigation menu -->
+	<div class="navbar">
+		<a href="" th:href="@{/index}">Home </a>
+
+		<div class="subnav">
+			<button class="subnavbtn">
+				Services <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/purchase_item}">Buy Products</a> <a href=""
+					th:href="@{/order_sell}">Sell Products</a> <a href=""
+					th:href="@{/items}">Add New Products</a>
+			</div>
+		</div>
+		<div class="subnav">
+			<button class="subnavbtn">
+				Material <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/steel}">Steel</a> <a href=""
+					th:href="@{/concrete}">Concrete</a> <a href=""
+					th:href="@{/bricksandblocks}">Bricks & Blocks</a> <a href=""
+					th:href="@{/floortiles}">Floor Tile</a> <a href=""
+					th:href="@{/cable}">Cable</a> <a href="" th:href="@{/pipes}">Pipes</a>
+			</div>
+		</div>
+		<a href="" th:href="@{/contact}">Contact us </a>
+		<div class="subnav">
+			<button class="subnavbtn">
+				About <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/aboutProject}">Project</a> <a href=""
+					th:href="@{/aboutus}">Team</a>
+			</div>
+		</div>
+		<a th:href="@{/logout}" class="btn btn-link btn-sm mb-2">Logout</a>
+	</div>
+	
+	<br>
+	
+	<h2 style="text-align: center; font-size: 40px;">Contact us</h2>
+	<div class="row">
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/sharad.jfif" alt="Sharadsing"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Sharadsing Rajput</h1>
+								<p>Front End Developer</p>
+								<p>sharadrajput49@gmail.com</p>
+								<p>Contact no : 7588688448</p>
+								<p>
+									<a
+										href="https://www.linkedin.com/in/sharadsing-rajput-629b83239/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/aniket.jfif" alt="Aniket Patil"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Aniket Patil</h1>
+								<p>Backend Developer</p>
+								<p>aniketpatil360@gmail.com</p>
+								<p>Contact no : 7768840999</p>
+								<p>
+									<a href="https://www.linkedin.com/in/aniket-patil-160433166/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/ashish.jfif" alt="Ashish Khute"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Ashish Khute</h1>
+								<p>Database Developer</p>
+								<p>ashishkhute@gmail.com</p>
+								<p>Contact no : 9075674405</p>
+								<p>
+									<a href="https://www.linkedin.com/in/ashish-khute-86ab08102/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/kunal.png" alt="Kunal Sinalkar"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Kunal Sinalkar</h1>
+								<p>Front End Developer</p>
+								<p>kunalsinalkar98@gmail.com</p>
+								<p>Contact no : 7350470181</p>
+								<p>
+									<a href="https://www.linkedin.com/in/kunal-sinalkar-492b9b215/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/shubhangi.png"
+									alt="Shubhangi More" style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Shubhangi More</h1>
+								<p>Backend Developer</p>
+								<p>shubhangimore9702@gmail.com</p>
+								<p>Contact no : 7039818737</p>
+								<p>
+									<a href="https://www.linkedin.com/in/shubhangi-more-232285214/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/akshay.jfif" alt="Akshay Kulkarni"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Akshay Kulkarni</h1>
+								<p>Database Developer</p>
+								<p>akshaydikulkarni@gmail.com</p>
+								<p>Contact no : 9403600790</p>
+								<p>
+									<a href="https://www.linkedin.com/in/akshaykulkarni45/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/bhavesh.jpeg" alt="Bhavesh Patwa"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Bhavesh Patwa</h1>
+								<p>Front End Developer</p>
+								<p>patwabhavesh2015@gmail.com</p>
+								<p>Contact no : 9403888225</p>
+								<p>
+									<a href="https://www.linkedin.com/in/bhavesh-patwa-b6a61a207/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/avinash.jpeg" alt="Avinash Gupta"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Avinash Gupta</h1>
+								<p>Backend Developer</p>
+								<p>kavinash778@gmail.com</p>
+								<p>Contact no : 7007172045</p>
+								<p>
+									<a href="https://www.linkedin.com/in/avinash-gupta-807799241/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="card">
+				<div class="container">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<img src="images/team_members/ganesh.jpeg" alt="Ganesh Khairnar"
+									style="width: 255px; height: 275px;">
+							</div>
+							<div class="flip-card-back">
+								<h1>Ganesh Khairnar</h1>
+								<p>Backend Developer</p>
+								<p>ganesh72015@gmail.com</p>
+								<p>Contact no : 9011309725</p>
+								<p>
+									<a href="https://www.linkedin.com/in/ganesh-kharnar-ba848b145/"
+										target="_blank"><button class="button">linkedin</button></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

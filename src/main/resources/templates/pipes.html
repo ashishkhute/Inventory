@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plumbing Pipes Info</title>
+<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous" />
+<style>
+* {
+	box-sizing: border-box
+}
+
+body {
+	font-family: Verdana, sans-serif;
+	margin: 0
+}
+
+.mySlides {
+	display: none
+}
+
+/* Slideshow container */
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: rgba(0, 0, 0, 0.521);
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color: rgba(47, 47, 47, 0.8);
+}
+
+/* Caption text */
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+/* Number text (1/5 etc) */
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@
+keyframes fade {from { opacity:.4
+	
+}
+
+to {
+	opacity: 1
+}
+
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.prev, .next, .text {
+		font-size: 11px
+	}
+}
+</style>
+</head>
+
+<body
+	style="background-image: none; background-color: rgb(232, 232, 232);">
+	<!-- Heading & Logo of Page -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<img src="images/inventory_logo.png" alt="Inventory Logo"
+						width="75">
+					<h1 class="animate-charcter">Inventory Management System</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- The navigation menu -->
+	<div class="navbar">
+		<a href="" th:href="@{/index}">Home </a>
+
+		<div class="subnav">
+			<button class="subnavbtn">
+				Services <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/purchase_item}">Buy Products</a>
+                <a href="" th:href="@{/order_sell}">Sell Products</a>
+                <a href="" th:href="@{/items}">Add New Products</a>
+			</div>
+		</div>
+		<div class="subnav">
+			<button class="subnavbtn">
+				Material <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/steel}">Steel</a> <a href=""
+					th:href="@{/concrete}">Concrete</a> <a href=""
+					th:href="@{/bricksandblocks}">Bricks & Blocks</a> <a href=""
+					th:href="@{/floortiles}">Floor Tile</a> <a href=""
+					th:href="@{/cable}">Cable</a> <a href="" th:href="@{/pipes}">Pipes</a>
+			</div>
+		</div>
+		<a href="" th:href="@{/contact}">Contact us </a>
+		<div class="subnav">
+			<button class="subnavbtn">
+				About <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/aboutProject}">Project</a> <a href=""
+					th:href="@{/aboutus}">Team</a>
+			</div>
+		</div>
+
+	<a th:href="@{/logout}" class="btn btn-link btn-sm mb-2">Logout</a>
+	</div>
+	<br>
+	
+
+	<h2 style="text-align: center; font-size: 40px;">Plumbing Pipes</h2>
+	<div>
+		<div style="margin-left: 45px; margin-right: 45px;">
+			<h1>What is Plumbing System?</h1>
+			<p>The Plumbing system comprises the whole system of pipe
+				fittings and appliances used for water supply and drainage. In this
+				supply and drainage system different pipes are used for different
+				purposes.</p>
+
+			<p>Different types of plumbing pipes are used in building
+				construction works for various purposes such as water supply,
+				drainage, waste disposal made of different materials. In every
+				building, sufficient quantity of water should be available at
+				required locations to meet various needs of occupants. So, water
+				needs must be properly computed before the construction of
+				structure. The transmission water is carried through pipes within
+				the structure above or below the ground. At the same we must compute
+				the proper drainage facilities to drain the wastewater through
+				pipes.</p>
+		</div>
+
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 5</div>
+				<img src="images/pipes/copper.png"
+					style="width: 60%; margin-left: 20%;">
+				<div class="text"
+					style="background-color: rgb(120, 119, 119); width: 600px; margin-left: 20%;">Copper
+					Pipes - When ground water is highly corrosive to metals then copper
+					pipes are used. Copper have high corrosive resistance when compared
+					to other pipe metals and they also have considerable strength,
+					reasonable ductility. They are available in long lengths in the
+					market. They can bare high pressure so; these pipes are also used
+					for industrial purposes for heavy flows.</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">2 / 5</div>
+				<img src="images/pipes/iron.png"
+					style="width: 60%; margin-left: 20%;">
+				<div class="text"
+					style="background-color: rgb(120, 119, 119); width: 600px; margin-left: 20%;">Galvanized
+					Iron Pipes - When compared to copper pipes, G.I pipes or steel
+					pipes are very economical. But they corrode easily in soft and acid
+					waters. In the other case galvanized iron pipes are much stronger
+					than copper pipes so, we can use this pipes in places where chance
+					of corrosion is less or in hard water areas. Hammering is needed to
+					remove the scales formed by hard water.</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">3 / 5</div>
+				<img src="images/pipes/polythene.png"
+					style="width: 60%; margin-left: 20%;">
+				<div class="text"
+					style="background-color: rgb(120, 119, 119); width: 600px; margin-left: 20%;">Polythene
+					Pipes - Polythene pipes or plastic pipes are used for cold water
+					services. Nowadays, plastic pipes dominate the others by some
+					advantages as follow a. Do not corrode b. Cheap in cost c. Less
+					weight d. Ease of installation e. Do not require threading f.
+					Resistant to bacterial scale So, these are mostly used in the world
+					but they are limited to cold water supplies. They do not sustain
+					high temperature.</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">4 / 5</div>
+				<img src="images/pipes/pvc.png"
+					style="width: 60%; margin-left: 20%;">
+				<div class="text"
+					style="background-color: rgb(120, 119, 119); width: 600px; margin-left: 20%;">PVC
+					Pipes - These are used for both supply system and drainage system.
+					These are very economical and easy to maintain. Soil pipes, kitchen
+					waste pipes are generally PVC pipes.</div>
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">5 / 5</div>
+				<img src="images/pipes/concrete_pipes.png"
+					style="width: 60%; margin-left: 20%;">
+				<div class="text"
+					style="background-color: rgb(120, 119, 119); width: 600px; margin-left: 20%;">Concrete
+					Pipes - For heavy drainage water disposal, concrete pipes of large
+					diameters are used. Smaller diameter pipes are used for small
+					flows. These are made of concrete only; no reinforcement is
+					provided. These are pre casted pipes.</div>
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">❮</a> <a class="next"
+				onclick="plusSlides(1)">❯</a>
+
+		</div>
+		<br>
+
+		<div style="text-align: center">
+			<span class="dot" onclick="currentSlide(1)"></span> <span class="dot"
+				onclick="currentSlide(2)"></span> <span class="dot"
+				onclick="currentSlide(3)"></span> <span class="dot"
+				onclick="currentSlide(4)"></span> <span class="dot"
+				onclick="currentSlide(5)"></span>
+		</div>
+	</div>
+	<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = slides.length
+			}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+		}
+	</script>
+
+</body>
+
+</html>

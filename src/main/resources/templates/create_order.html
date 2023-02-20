@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add New Items</title>
+<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+
+<body
+	style="background-image: none; background-color: rgb(232, 232, 232);">
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<img src="" th:src="@{/images/inventory_logo.png}"
+						alt="Inventory Logo" width="75" align="left">
+					<h1 class="animate-charcter">Inventory Management System</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- The navigation menu -->
+	<div class="navbar">
+		<a href="" th:href="@{/index}">Home </a>
+
+		<div class="subnav">
+			<button class="subnavbtn">
+				Services <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/purchase_item}">Buy Products</a>
+                <a href="" th:href="@{/order_sell}">Sell Products</a>
+                <a href="" th:href="@{/items}">Add New Products</a>
+			</div>
+		</div>
+		<div class="subnav">
+			<button class="subnavbtn">
+				Material <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/steel}">Steel</a> <a href=""
+					th:href="@{/concrete}">Concrete</a> <a href=""
+					th:href="@{/bricksandblocks}">Bricks & Blocks</a> <a href=""
+					th:href="@{/floortiles}">Floor Tile</a> <a href=""
+					th:href="@{/cable}">Cable</a> <a href="" th:href="@{/pipes}">Pipes</a>
+			</div>
+		</div>
+		<a href="" th:href="@{/contact}">Contact us </a>
+		<div class="subnav">
+			<button class="subnavbtn">
+				About <i class="fa fa-caret-down"></i>
+			</button>
+			<div class="subnav-content">
+				<a href="" th:href="@{/aboutProject}">Project</a> <a href=""
+					th:href="@{/aboutus}">Team</a>
+			</div>
+		</div>
+		<a th:href="@{/logout}" class="btn btn-link btn-sm mb-2">Logout</a>
+	</div>
+	
+	<br>
+	
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Create New Order</h1>
+				<div class="card-body">
+					<form th:action="@{/order}" th:object="${order}" method="POST">
+						<div class="form-group">
+							<label for="dropdown">Select Item</label> <select
+								style="width: 100%; height: 35px;" th:field="*{itemCode}">
+
+								<option value=0 disabled="disabled">please select the
+									product</option>
+								<option th:each="item: ${map}" th:value="${item.value}"
+									th:text="${item.key}"></option>
+							</select>
+
+						</div>
+
+						<div class="form-group">
+							<label> Order Date </label> <input type="text" name="orderDate"
+								th:field="*{orderDate}" class="form-control"
+								placeholder="Enter order date" />
+						</div>
+
+						<div class="form-group">
+							<label> Required Quantity </label> <input type="text"
+								name="quantity" th:field="*{quantity}" class="form-control"
+								placeholder="Enter the required quantity" />
+						</div>
+
+
+						<div class="box-footer">
+							<button type="submit" onclick="myFunction()" class="btn btn-primary">Submit</button>
+							<script>
+								function myFunction() {
+  								alert("Order has Placed Successfully");
+								}
+								</script>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
